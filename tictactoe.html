@@ -1,0 +1,94 @@
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+
+h2{
+    position: relative;
+    top: 0px;
+    transition: 1s top ease;
+}
+.block{
+    width: 73.33px;
+    height: 73.33px;
+    background: black;
+
+}
+#board{
+    font-family: cursive;
+    font-size: 48px;
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    margin: 10px;
+    overflow:  visible;
+}
+button{
+    position: relative;
+    top: 0px;
+    transition: 1s top ease;
+    -webkit-transition: 1s top ease;
+    width: 100px;
+    height: auto;
+    margin: 10px;
+}
+span{
+    display: block;
+    border: 1px solid black;
+    height: 40px;
+    width : 220px;
+    margin: 10px;
+}
+</style>
+</head>
+<body>
+<h2 id="title">Choose X or O to begin</h2>
+<button onclick="choose(this.innerText); disappear()">X</button>
+<button onclick="choose(this.innerText); disappear()">O</button>
+<span id="status"></span>    
+<div id="board">
+<!-- div tags added in the script below -->
+</div>
+</body>
+<script src="tictactoe.js"></script>
+<script>
+    
+makeBlocks();
+
+win();
+var board = document.getElementById("board");
+    
+    for(var i=0; i<9; i++)
+    {
+        //creating the block
+        var block = document.createElement("div");
+        //giving it an id of block for future references
+        block.setAttribute("class","block");
+        //some css
+        block.style.height = "73.33px";
+        block.style.background = "white";
+        block.style.display = "inline";
+        block.style.position = "absolute";
+        block.style.border = "1px solid black";
+        block.style.textAlign = "center";
+        block.style.textTransform = "uppercase";
+        block.style.left = (i * 73.33) -1;
+        block.style.top = -1;
+        //on click put an x in it
+        block.onclick = fillblock;
+        if(i > 2){
+            block.style.left = (i%3 * 73.33) - 1;
+            block.style.top = "73.33px";
+        }
+        if(i > 5){
+            block.style.left = (i%3 * 73.33) - 1;
+            block.style.top = 73.33 * 2;
+        }
+        //adding them to the board so i can see them
+        board.appendChild(block);
+    
+    
+    }
+//drawLine();
+</script>
+</html>
