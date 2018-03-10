@@ -18,6 +18,7 @@ h2{
     font-family: cursive;
     font-size: 48px;
     position: absolute;
+	left: 41%;
     width: 220px;
     height: 220px;
     margin: 10px;
@@ -39,16 +40,19 @@ span{
     width : 220px;
     margin: 10px;
 }
+
 </style>
 </head>
 <body>
-<h2 id="title">Choose X or O to begin</h2>
-<button onclick="choose(this.innerText); disappear()">X</button>
-<button onclick="choose(this.innerText); disappear()">O</button>
-<span id="status"></span>    
-<div id="board">
-<!-- div tags added in the script below -->
-</div>
+<center>
+	<h2 id="title">Choose X or O to begin</h2>
+	<button onclick="choose(this.innerText); disappear()">X</button>
+	<button onclick="choose(this.innerText); disappear()">O</button>
+	<span id="status"></span>    
+	<div id="board">
+	<!-- div tags added in the script below -->
+	</div>
+</center>
 </body>
 <script src="tictactoe.js"></script>
 <script>
