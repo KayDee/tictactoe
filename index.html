@@ -8,12 +8,14 @@ h2{
     top: 0px;
     transition: 1s top ease;
 }
+
 .block{
     width: 73.33px;
     height: 73.33px;
     background: black;
 
 }
+
 #board{
     font-family: cursive;
     font-size: 48px;
@@ -24,6 +26,7 @@ h2{
     margin: 10px;
     overflow:  hidden;
 }
+
 button{
     position: relative;
     top: 0px;
@@ -33,6 +36,7 @@ button{
     height: auto;
     margin: 10px;
 }
+
 span{
     display: block;
     border: 1px solid black;
@@ -41,6 +45,13 @@ span{
     margin: 10px;
 }
 
+/* doesn't really work because of the absolute positioning of the element
+@media only screen and (max-width: 600px){
+	#board{
+		left: 30%;
+	}
+}
+*/
 </style>
 </head>
 <body>
