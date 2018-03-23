@@ -22,6 +22,11 @@ function disappear(){
 
 function fillblock(){
     this.innerHTML = user_choice;
+    if (user_choice == "X"){
+        user_choice = "O";
+    }else{
+        user_choice = "X";
+    }
     choose(user_choice);
     disappear();
     makeBlocks();
@@ -49,38 +54,65 @@ function makeBlocks(){
     }
 }
 
+let reloadthepage = () => {
+    location.reload();
+}
+
+
 function win(){
-    
+    let won = false;
     for(var i = 0; i < 3; i++){
-        if(realBlocks[i][0] == user_choice && realBlocks[i][1] == user_choice && realBlocks[i][2] == user_choice){
-            update.innerText = user_choice + " WON";
+        if(realBlocks[i][0] == "X" && realBlocks[i][1] == "X" && realBlocks[i][2] == "X"){
+            update.innerText = "X WON";
             drawLine(i,"horizontal");
+            won = true;
             break;
             
+        }else if( realBlocks[i][0] == "Y" && realBlocks[i][1] == "Y" && realBlocks[i][2] == "Y" ){
+            update.innerText = "Y WON";
+            drawLine(i,"horizontal");
+            won = true;
+            break;
         }
     }
     
     for(var i = 0; i < 3; i++){
-        if(realBlocks[0][i] == user_choice && realBlocks[1][i] == user_choice && realBlocks[2][i] == user_choice){
-            update.innerText = user_choice + " WON";
+        if(realBlocks[0][i] == "X" && realBlocks[1][i] == "X" && realBlocks[2][i] == "X"){
+            update.innerText = "X WON";
             drawLine(i, "vertical");
+            won = true;
+            break;
+        }else if( realBlocks[0][i] == "Y" && realBlocks[1][i] == "Y" && realBlocks[2][i] == "Y" ){
+            update.innerText = "Y WON";
+            drawLine(i, "vertical");
+            won = true;
             break;
         }
     }
 
 
-    if(realBlocks[0][0] == user_choice && realBlocks[1][1] == user_choice && realBlocks[2][2] == user_choice){
-        update.innerText = user_choice+" WON";
+    if(realBlocks[0][0] == "X" && realBlocks[1][1] == "X" && realBlocks[2][2] == "X"){
+        update.innerText = "X WON";
         drawLine(i, "diagonalRight");
-       
+        won = true;
+    }else if( realBlocks[0][0] == "Y" && realBlocks[1][1] == "Y" && realBlocks[2][2] == "Y" ){
+        update.innerText = "Y WON";
+        drawLine(i, "diagonalRight");
+        won = true;
     }
 
-    if(realBlocks[0][2] == user_choice && realBlocks[1][1] == user_choice && realBlocks[2][0] == user_choice){
-        update.innerText = user_choice+" WON";
+    if(realBlocks[0][2] == "X" && realBlocks[1][1] == "X" && realBlocks[2][0] == "X"){
+        update.innerText = "X WON";
         drawLine(i, "diagonalLeft");
-    }   
-    
-    
+        won = true;
+    }else if( realBlocks[0][2] == "Y" && realBlocks[1][1] == "Y" && realBlocks[2][0] == "Y" ){
+        update.innerText = "X WON";
+        drawLine(i, "diagonalLeft");
+        won = true;  
+    }
+    if(won){
+        setTimeout( reloadthepage, 3000);
+    }
 }
 
 

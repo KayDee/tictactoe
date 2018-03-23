@@ -1,0 +1,23 @@
+{
+  "name": "tictactoe",
+  "version": "1.0.0",
+  "description": "a tic tac toe game",
+  "main": "tictactoe.js",
+  "dependencies": {
+    "eslint": "^4.18.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/charbelsako/tictactoe.git"
+  },
+  "author": "charbel sarkis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/charbelsako/tictactoe/issues"
+  },
+  "homepage": "https://github.com/charbelsako/tictactoe#readme"
+}
