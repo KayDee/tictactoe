@@ -1,3 +1,4 @@
+//adding a line of code
 var user_choice = "X";
 var computerchoice;
 var update = document.getElementById("status");
